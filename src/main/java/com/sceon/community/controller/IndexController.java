@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 
 public class IndexController {
-    @RequestMapping("/in")
+    @RequestMapping("/")
     public String index() {
-        System.out.println("1111");
+        //System.out.println("1111");
         return "index";
     }
 }
