@@ -9,4 +9,12 @@
         VALUES
             (#{id},#{accountId},#{name},#{token},#{gmtCreate},#{gmtModified})
     </insert>
+    <select id="findByToken" resultType="com.sceon.community.model.User">
+        SELECT
+            ID,ACCOUNT_ID,NAME,TOKEN,GMT_CREATE,GMT_MODIFIED
+        FROM
+            USER
+        WHERE
+            TOKEN=#{token}
+    </select>
 </mapper>

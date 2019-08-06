@@ -15,7 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.UUID;
 
@@ -38,7 +40,8 @@ public class AuthorizeController {
     @GetMapping("callback")
     public String callback(@RequestParam (name = "code") String code,
                            @RequestParam (name = "state") String state,
-                           HttpServletRequest request){
+                           HttpServletRequest request,
+                           HttpServletResponse response){
         AccessTokenPojo accessTokenPojo = new AccessTokenPojo();
         accessTokenPojo.setCode(code);
         accessTokenPojo.setState(state);
@@ -57,16 +60,13 @@ public class AuthorizeController {
             user.setGmtModified(user.getGmtCreate());
             //System.out.println(user);
             userMapper.insert(user);
+            response.addCookie(new Cookie("token",token));
             //登录成功设置cookie，session
-            HttpSession session = request.getSession();
+            /*HttpSession session = request.getSession();
             //用户信息设置到session
-            session.setAttribute("user",githubUser);
+            session.setAttribute("user",githubUser);*/
             //重定向至主页
-
             return "redirect:/";
-
-
-
         }else {
             //登录失败重新登录
             return "redirect:/";
