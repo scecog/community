@@ -25,3 +25,22 @@ create TABLE user(
  gmt_modified BIGINT
  )
 ```
+4. 针对于登录的用户，每次登录都会进行插入数据库操作，产生token的随机数
+，将token设置为cookie，然后再存入session，取出用户信息，这样做有很明显的弊端
+每次都向数据库进行插入操作，后序进行优化
+5. 登录完成后，添加了发布问题的界面html，publish.html
+6. 需要将发布的问题都存储到数据库中，建表语句如下:  
+```css
+CREATE TABLE question(
+id INT PRIMARY KEY auto_increment,
+title VARCHAR(50),
+descriptions TINYTEXT,
+gmt_create BIGINT,
+gmt_modified BIGINT,
+crator int,
+comment_count int DEFAULT 0,
+view_count int DEFAULT 0,
+like_count int DEFAULT 0,
+tag VARCHAR(256)
+);
+
