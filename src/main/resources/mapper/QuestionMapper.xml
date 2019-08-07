@@ -1,3 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sceon.community.mapper.QuestionMapper">
+    <insert id="create" parameterType="com.sceon.community.model.Question">
+        INSERT INTO QUESTION(
+            ID,
+            TITLE,
+            DESCRIPTIONS,
+            GMT_CREATE,
+            GMT_MODIFIED,
+            CREATOR,
+            COMMENT_COUNT,
+            VIEW_COUNT,
+            LIKE_COUNT,
+            TAG
+        ) VALUES (
+            #{id},
+            #{title},
+            #{descriptions},
+            #{gmtCreate},
+            #{gmtModified},
+            #{creator},
+            #{commentCount},
+            #{viewCount},
+            #{likeCount},
+            #{tag}
+        )
+    </insert>
+    <select id="listQuestion" resultType="com.sceon.community.model.Question">
+        SELECT
+            *
+        FROM
+            question
+    </select>
+</mapper>

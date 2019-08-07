@@ -50,7 +50,7 @@ public class AuthorizeController {
         accessTokenPojo.setRedirect_uri(redirectUri);
         String accessToken = githubProvider.getAccessToken(accessTokenPojo);
         GithubUserPojo githubUser = githubProvider.getUserInfo(accessToken);
-        if(githubUser != null){
+        if(githubUser != null && githubUser.getName() != null){
             User user = new User();
             String token = UUID.randomUUID().toString();
             user.setToken(token);
@@ -58,14 +58,11 @@ public class AuthorizeController {
             user.setAccountId(String.valueOf(githubUser.getId()));
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
+            //System.out.println(githubUser.getAvatarUrl());
+            user.setAvatarUrl(githubUser.getAvatar_url());
             //System.out.println(user);
             userMapper.insert(user);
             response.addCookie(new Cookie("token",token));
-            //登录成功设置cookie，session
-            /*HttpSession session = request.getSession();
-            //用户信息设置到session
-            session.setAttribute("user",githubUser);*/
-            //重定向至主页
             return "redirect:/";
         }else {
             //登录失败重新登录
