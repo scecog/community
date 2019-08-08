@@ -32,5 +32,13 @@
             *
         FROM
             question
+        LIMIT
+            #{offset},#{pageSize}
+    </select>
+    <select id="count" resultType="Integer" >
+        SELECT
+            count(1)
+        FROM
+            question
     </select>
 </mapper>

@@ -13,5 +13,7 @@ import java.util.List;
 public interface QuestionMapper {
     public void create(Question question);
 
-    List<Question> listQuestion();
+    List<Question> listQuestion(Integer offset, Integer pageSize);
+
+    Integer count();
 }
