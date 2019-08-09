@@ -1,5 +1,7 @@
 package com.sceon.community.service;
 
+import com.sceon.community.exception.CustomizeErrorCode;
+import com.sceon.community.exception.CustomizeException;
 import com.sceon.community.mapper.QuestionMapper;
 import com.sceon.community.mapper.UserMapper;
 import com.sceon.community.model.Question;
@@ -87,11 +89,40 @@ public class QuestionService {
 
     public QuestionDto getById(Integer id) {
         Question question = questionMapper.findById(id);
+        if(question == null){
+          throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+        }
         User user = userMapper.findById(question.getCreator());
         QuestionDto questionDto = new QuestionDto();
         BeanUtils.copyProperties(question,questionDto);
         questionDto.setUser(user);
         return questionDto;
 
+    }
+
+
+
+    public void createOrUpdate(Question question) {
+        if(question.getId() == null){
+            question.setGmtCreate(System.currentTimeMillis());
+            question.setGmtModified(question.getGmtCreate());
+            questionMapper.create(question);
+        }else{
+            question.setGmtModified(System.currentTimeMillis());
+            int update = questionMapper.update(question);
+            if(update != 1){
+                throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+            }
+
+        }
+    }
+
+    public void addView(Integer id) {
+
+        Question question = questionMapper.findById(id);
+        //System.out.println(question.getViewCount()+1);
+        question.setViewCount(question.getViewCount() + 1);
+
+        questionMapper.update(question);
     }
 }

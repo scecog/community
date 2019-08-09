@@ -24,4 +24,6 @@ public interface QuestionMapper {
 
 
     Question findById(Integer id);
+
+    Integer update(Question question);
 }
