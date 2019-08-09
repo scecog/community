@@ -26,35 +26,14 @@ import java.util.List;
 @Controller
 public class IndexController {
     @Autowired
-    private UserMapper userMapper;
-    @Autowired
     private QuestionService questionService;
     @RequestMapping("/")
     //分页功能需要页码和每页的数据量，计算出偏移量，例如第一页就是从0开始计算到5
     public String index(HttpServletRequest request, Model model,
                         @RequestParam(name = "pageNum",defaultValue = "1") Integer pageNum,
-                        @RequestParam(name = "pagezSize",defaultValue = "5") Integer pageSize) {
-        //这种逻辑下cookie好像不可能为空，因为清除了cookie的话，一点击登录直接就会创建cooki
-
-        /*if(pageNum < 1){
-            pageNum = 1;
-        }*/
-
-        Cookie[] cookies = request.getCookies();
-        if(cookies == null){
-            return "index";
-        }
-        for (Cookie cookie: cookies) {
-            if(cookie.getName().equals("token")){
-                String token = cookie.getValue();
-                User user = userMapper.findByToken(token);
-                if(user != null){
-                        request.getSession().setAttribute("user",user);
-                }
-                break;
-            }
-        }
+                        @RequestParam(name = "pageSize",defaultValue = "5") Integer pageSize) {
         PageDto page = questionService.listQuestion(pageNum,pageSize);
+        //System.out.println(page.getList());
         model.addAttribute("pagei",page);
         return "index";
     }

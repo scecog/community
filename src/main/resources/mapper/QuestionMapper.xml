@@ -41,4 +41,30 @@
         FROM
             question
     </select>
+    <select id="list"  resultType="com.sceon.community.model.Question">
+        SELECT
+            *
+        FROM
+            QUESTION
+        WHERE
+            creator=#{userId}
+        LIMIT
+            #{offset},#{pageSize}
+    </select>
+    <select id="countByUserId" resultType="Integer">
+        SELECT
+            count(1)
+        FROM
+            QUESTION
+        WHERE
+            creator=#{userId}
+    </select>
+    <select id="findById" resultType="com.sceon.community.model.Question">
+        SELECT
+            *
+        FROM
+            QUESTION
+        WHERE
+            id=#{id}
+    </select>
 </mapper>

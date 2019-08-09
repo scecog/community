@@ -25,4 +25,20 @@
         WHERE
             id = #{id}
     </select>
+    <select id="findByAccountId" resultType="com.sceon.community.model.User">
+        SELECT
+            *
+        FROM
+            user
+        WHERE
+            account_id=#{accountId}
+    </select>
+    <update id="update" parameterType="com.sceon.community.model.User">
+        UPDATE
+            user
+        SET
+            name = #{name},token=#{token},gmt_modified=#{gmtModified},avatar_url=#{avatarUrl}
+        WHERE
+            id=#{id}
+    </update>
 </mapper>

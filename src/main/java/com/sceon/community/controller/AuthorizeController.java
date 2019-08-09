@@ -6,6 +6,7 @@ import com.sceon.community.model.User;
 import com.sceon.community.pojo.AccessTokenPojo;
 import com.sceon.community.pojo.GithubUserPojo;
 import com.sceon.community.provider.GithubProvider;
+import com.sceon.community.service.UserService;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -31,6 +32,8 @@ public class AuthorizeController {
     private GithubProvider githubProvider;
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private UserService userService;
     @Value("${github.client.id}")
     private String clientId;
     @Value("${github.client.secret}")
@@ -56,12 +59,11 @@ public class AuthorizeController {
             user.setToken(token);
             user.setName(githubUser.getName());
             user.setAccountId(String.valueOf(githubUser.getId()));
-            user.setGmtCreate(System.currentTimeMillis());
-            user.setGmtModified(user.getGmtCreate());
             //System.out.println(githubUser.getAvatarUrl());
             user.setAvatarUrl(githubUser.getAvatar_url());
             //System.out.println(user);
-            userMapper.insert(user);
+            userService.createOrUpdate(user);
+            //userMapper.insert(user);
             response.addCookie(new Cookie("token",token));
             return "redirect:/";
         }else {
@@ -69,6 +71,15 @@ public class AuthorizeController {
             return "redirect:/";
         }
 
+    }
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request,HttpServletResponse response){
+        HttpSession session = request.getSession();
+        session.removeAttribute("user");
+        Cookie cookie = new Cookie("token",null);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+        return "redirect:/";
     }
 
 }

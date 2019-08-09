@@ -1,17 +1,13 @@
 package com.sceon.community.controller;
 
 import com.sceon.community.mapper.QuestionMapper;
-import com.sceon.community.mapper.UserMapper;
 import com.sceon.community.model.Question;
 import com.sceon.community.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
 
 /**
  * @author shichenchong@inspur.com
@@ -19,8 +15,6 @@ import java.util.Map;
  */
 @Controller
 public class PublishController {
-    @Autowired
-    private UserMapper userMapper;
     @Autowired
     private QuestionMapper questionMapper;
     @GetMapping("/publish")
@@ -47,28 +41,10 @@ public class PublishController {
             model.addAttribute("error","标签不能为空");
             return "publish";
         }
-
-        User user = null;
-        Cookie[] cookies = request.getCookies();
-        if(cookies == null ){
-            model.addAttribute("error","用户未登录");
-            return "publish";
+        User user = (User)request.getSession().getAttribute("user");
+        if(user == null){
+            return "redirect:/";
         }
-        for (Cookie cookie: cookies) {
-            if(cookie.getName().equals("token")){
-                String token = cookie.getValue();
-                user = userMapper.findByToken(token);
-                if(user != null){
-                    request.getSession().setAttribute("user",user);
-                }
-                break;
-            }
-            /*if(user == null){
-                model.addAttribute("error","用户未登录");
-                return "publish";
-            }*/
-        }
-
         Question question = new Question();
         question.setTitle(title);
         question.setDescriptions(descriptions);
