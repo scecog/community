@@ -1,4 +1,4 @@
-package com.sceon.community.pojo;
+package com.sceon.community.dto;
 
 import com.sceon.community.model.User;
 import lombok.Data;

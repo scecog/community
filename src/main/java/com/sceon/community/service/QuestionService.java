@@ -6,8 +6,8 @@ import com.sceon.community.mapper.QuestionMapper;
 import com.sceon.community.mapper.UserMapper;
 import com.sceon.community.model.Question;
 import com.sceon.community.model.User;
-import com.sceon.community.pojo.PageDto;
-import com.sceon.community.pojo.QuestionDto;
+import com.sceon.community.dto.PageDto;
+import com.sceon.community.dto.QuestionDto;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -87,7 +87,7 @@ public class QuestionService {
 
     }
 
-    public QuestionDto getById(Integer id) {
+    public QuestionDto getById(Long id) {
         Question question = questionMapper.findById(id);
         if(question == null){
           throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
@@ -117,12 +117,13 @@ public class QuestionService {
         }
     }
 
-    public void addView(Integer id) {
+    public void addView(Long id) {
 
         Question question = questionMapper.findById(id);
-        //System.out.println(question.getViewCount()+1);
-        question.setViewCount(question.getViewCount() + 1);
-
-        questionMapper.update(question);
+        question.setViewCount(1);
+        int update = questionMapper.update(question);
+        if(update != 1){
+            throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+        }
     }
 }

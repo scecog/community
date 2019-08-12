@@ -1,8 +1,8 @@
 package com.sceon.community.provider;
 
 import com.alibaba.fastjson.JSON;
-import com.sceon.community.pojo.AccessTokenPojo;
-import com.sceon.community.pojo.GithubUserPojo;
+import com.sceon.community.dto.AccessTokenPojo;
+import com.sceon.community.dto.GithubUserPojo;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
 

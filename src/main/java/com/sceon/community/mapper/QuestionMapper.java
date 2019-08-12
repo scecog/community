@@ -1,7 +1,6 @@
 package com.sceon.community.mapper;
 
 import com.sceon.community.model.Question;
-import com.sceon.community.pojo.QuestionDto;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -23,7 +22,7 @@ public interface QuestionMapper {
     Integer countByUserId(int userId);
 
 
-    Question findById(Integer id);
+    Question findById(Long id);
 
     Integer update(Question question);
 }

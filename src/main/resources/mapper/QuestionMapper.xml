@@ -54,7 +54,7 @@
         UPDATE
             QUESTION
         SET
-            TITLE=#{title},DESCRIPTIONS=#{descriptions},gmt_modified=#{gmtModified},view_count=#{viewCount},TAG=#{tag}
+            TITLE=#{title},DESCRIPTIONS=#{descriptions},gmt_modified=#{gmtModified},view_count=view_count+#{viewCount},comment_count=comment_count+#{commentCount},TAG=#{tag}
         WHERE
             id=#{id}
     </update>

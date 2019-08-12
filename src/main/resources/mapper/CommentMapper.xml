@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sceon.community.mapper.CommentMapper">
+    <insert id="insertComment" parameterType="com.sceon.community.model.Comment">
+        INSERT INTO
+            comment(id,parent_id,type,comment_id,comment_content,gmt_create,gmt_modified)
+        VALUES
+            (#{id},#{parentId},#{type},#{commentId},#{commentContent},#{gmtCreate},#{gmtModified})
+
+    </insert>
+    <select id="selectByParentId" resultType="com.sceon.community.model.Comment">
+        SELECT
+            *
+        FROM
+            comment
+        WHERE
+            parent_id=#{parentId}
+    </select>
+</mapper>

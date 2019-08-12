@@ -1,15 +1,11 @@
 package com.sceon.community.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.sceon.community.mapper.UserMapper;
 import com.sceon.community.model.User;
-import com.sceon.community.pojo.AccessTokenPojo;
-import com.sceon.community.pojo.GithubUserPojo;
+import com.sceon.community.dto.AccessTokenPojo;
+import com.sceon.community.dto.GithubUserPojo;
 import com.sceon.community.provider.GithubProvider;
 import com.sceon.community.service.UserService;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;

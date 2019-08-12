@@ -1,9 +1,7 @@
 package com.sceon.community.controller;
 
-import com.sceon.community.mapper.QuestionMapper;
-import com.sceon.community.pojo.QuestionDto;
+import com.sceon.community.dto.QuestionDto;
 import com.sceon.community.service.QuestionService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +17,7 @@ public class QuestionController {
     @Autowired
     private QuestionService questionService;
     @GetMapping("/question/{id}")
-    public String question(@PathVariable(name = "id") Integer id,
+    public String question(@PathVariable(name = "id") Long id,
                            Model model){
         QuestionDto questionDto = questionService.getById(id);
         //增加阅读数

@@ -52,3 +52,21 @@ tag VARCHAR(256)
 9. 实现了查看自己问题的界面，自己可以看到自己发表的问题，并且修复了以前登录的时候，每次登录都会向数据库插入一条数据的问题，现在的模式是如果存在用户，就进行更新，否则进行插入操作
 10. 实现了拦截器，对于任何请求都需要进行cookie的校验，实现了退出登录的功能，使cookie变为空。
 
+11. 实现了阅读数，并且准备增加评论功能  
+12. 评论功能数据库设计：  
+ 
+
+   create TABLE comment(
+   id BIGINT PRIMARY KEY auto_increment,
+   parent_id BIGINT NOT NULL COMMENT '父类id',
+   type INT COMMENT '确认是几级评论',
+   comment_id INT COMMENT '评论人的id',
+   comment_description text COMMENT '评论内容',
+   gmt_create BIGINT NOT NULL COMMENT '评论创建时间',
+   gmt_modified BIGINT NOT NULL COMMENT '评论修改时间',
+   like_count BIGINT DEFAULT 0 COMMENT '点赞数'
+   )
+13. 实现评论功能采用前后端分离的思想，使评论在页面上进行局部刷新即可，实现评论的接口，  
+对于回复的是问题或者是评论，进行不同的刷新页面。
+14. 实现了评论时的异常处理
+

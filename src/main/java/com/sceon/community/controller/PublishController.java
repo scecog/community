@@ -32,7 +32,7 @@ public class PublishController {
             @RequestParam("descriptions") String descriptions,
             @RequestParam("tag") String tag, HttpServletRequest request, Model model,
                             //前端将id传入进来，可以为空
-                            @RequestParam("id") Integer id){
+                            @RequestParam("id") Long id){
         model.addAttribute("title",title);
         model.addAttribute("descriptions",descriptions);
         model.addAttribute("tag",tag);
@@ -65,7 +65,7 @@ public class PublishController {
         return "redirect:/";
     }
     @GetMapping("/publish/{id}")
-    public String updateQuestion(@PathVariable(name = "id") Integer id,
+    public String updateQuestion(@PathVariable(name = "id") Long id,
                                  Model model){
         //将question根据id查询出来，然后传递给前端三个参数，id作为在前端的隐藏域，也可以为空，例如发布问题时
         Question question = questionMapper.findById(id);
