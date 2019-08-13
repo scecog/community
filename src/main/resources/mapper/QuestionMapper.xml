@@ -54,7 +54,23 @@
         UPDATE
             QUESTION
         SET
-            TITLE=#{title},DESCRIPTIONS=#{descriptions},gmt_modified=#{gmtModified},view_count=view_count+#{viewCount},comment_count=comment_count+#{commentCount},TAG=#{tag}
+            TITLE=#{title},DESCRIPTIONS=#{descriptions},gmt_modified=#{gmtModified},view_count=#{viewCount},comment_count=#{commentCount},TAG=#{tag}
+        WHERE
+            id=#{id}
+    </update>
+    <update id="addViewCount" parameterType="com.sceon.community.model.Question">
+        UPDATE
+            QUESTION
+        SET
+            view_count=view_count+#{viewCount}
+        WHERE
+            id=#{id}
+    </update>
+    <update id="addCommentCount" parameterType="com.sceon.community.model.Question">
+        UPDATE
+            QUESTION
+        SET
+            comment_count=comment_count+#{commentCount}
         WHERE
             id=#{id}
     </update>

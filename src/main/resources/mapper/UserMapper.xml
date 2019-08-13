@@ -2,6 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sceon.community.mapper.UserMapper">
+    <resultMap id="userMap" type="com.sceon.community.model.User">
+        <!--<result column="id" property="id" jdbcType="BIGINT" />
+        <result column="key" property="key" jdbcType="VARCHAR" />
+        <result column="value" property="value" jdbcType="VARCHAR" />
+        <result column="type" property="type" jdbcType="INTEGER" />-->
+    </resultMap>
+
     <insert id="insert" parameterType="com.sceon.community.model.User">
         INSERT INTO
             user
@@ -41,4 +48,14 @@
         WHERE
             id=#{id}
     </update>
+    <select id="listByIds" resultMap="userMap">
+        SELECT
+            *
+        FROM
+            user
+        WHERE
+            id IN
+            <foreach item="item" index="index" collection="list" open="("
+                           separator="," close=")">#{item}</foreach>
+    </select>
 </mapper>

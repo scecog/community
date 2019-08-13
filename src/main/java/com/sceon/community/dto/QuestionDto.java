@@ -9,7 +9,7 @@ import lombok.Data;
  */
 @Data
 public class QuestionDto {
-    private Integer id;
+    private Long id;
     private String title;
     private String descriptions;
     private Long gmtCreate;

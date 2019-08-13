@@ -4,6 +4,8 @@ import com.sceon.community.model.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * @author shichenchong@inspur.com
  * data   2019/8/6 11:03
@@ -21,4 +23,6 @@ public interface UserMapper {
     User findByAccountId(String accountId);
 
     void update(User dbUser);
+
+    List<User> listByIds(List<Integer> userIds);
 }

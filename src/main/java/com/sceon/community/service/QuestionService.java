@@ -121,7 +121,7 @@ public class QuestionService {
 
         Question question = questionMapper.findById(id);
         question.setViewCount(1);
-        int update = questionMapper.update(question);
+        int update = questionMapper.addViewCount(question);
         if(update != 1){
             throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
         }

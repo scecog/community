@@ -4,9 +4,10 @@ import com.sceon.community.dto.ResponseDto;
 import com.sceon.community.exception.CustomizeErrorCode;
 import com.sceon.community.mapper.CommentMapper;
 import com.sceon.community.model.Comment;
-import com.sceon.community.dto.CommentDto;
+import com.sceon.community.dto.CommentCreateDto;
 import com.sceon.community.model.User;
 import com.sceon.community.service.CommentService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author shichenchong@inspur.com
@@ -29,11 +28,14 @@ public class CommentController {
     private CommentService commentService;
     @ResponseBody
     @PostMapping("/comment")
-    public Object post(@RequestBody CommentDto commentdto,
+    public Object post(@RequestBody CommentCreateDto commentdto,
                        HttpServletRequest request){
         User user = (User)request.getSession().getAttribute("user");
         if(user == null){
             return ResponseDto.errorOf(CustomizeErrorCode.NO_LOGIN);
+        }
+        if (StringUtils.isBlank(commentdto.getCommentContent())){
+            return ResponseDto.errorOf(CustomizeErrorCode.COMMENT_NOT_EMPTY);
         }
         Comment comment = new Comment();
         comment.setParentId(commentdto.getParentId());

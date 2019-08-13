@@ -25,4 +25,8 @@ public interface QuestionMapper {
     Question findById(Long id);
 
     Integer update(Question question);
+
+    int addViewCount(Question question);
+
+    void addCommentCount(Question question);
 }

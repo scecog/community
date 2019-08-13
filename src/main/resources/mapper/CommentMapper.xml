@@ -17,4 +17,13 @@
         WHERE
             parent_id=#{parentId}
     </select>
+    <select id="listByQuestionId" resultType="com.sceon.community.model.Comment">
+        SELECT
+            *
+        FROM
+            comment
+        WHERE
+            parent_id=#{parentId} AND type=#{type}
+            ORDER BY gmt_create DESC
+    </select>
 </mapper>
