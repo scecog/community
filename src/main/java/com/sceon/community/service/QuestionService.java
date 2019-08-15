@@ -8,12 +8,14 @@ import com.sceon.community.model.Question;
 import com.sceon.community.model.User;
 import com.sceon.community.dto.PageDto;
 import com.sceon.community.dto.QuestionDto;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author shichenchong@inspur.com
@@ -125,5 +127,21 @@ public class QuestionService {
         if(update != 1){
             throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
         }
+    }
+    public List<QuestionDto> selectByRelated(QuestionDto queryDto){
+        if(StringUtils.isBlank(queryDto.getTag())){
+            return new ArrayList<>();
+        }
+        String tags = StringUtils.replace(queryDto.getTag(), ",", "|");
+        Question question = new Question();
+        question.setId(queryDto.getId());
+        question.setTag(tags);
+        List<Question> questionList = questionMapper.selectByRelated(question);
+        List<QuestionDto> questionDtoList = questionList.stream().map(q -> {
+            QuestionDto questionDto = new QuestionDto();
+            BeanUtils.copyProperties(q,questionDto);
+            return questionDto;
+        }).collect(Collectors.toList());
+        return questionDtoList;
     }
 }

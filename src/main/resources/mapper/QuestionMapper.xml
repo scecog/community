@@ -2,6 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sceon.community.mapper.QuestionMapper">
+    <resultMap id="questionMap" type="com.sceon.community.model.Question">
+        <id column="id" property="id" jdbcType="BIGINT"></id>
+        <result column="title" property="title" jdbcType="VARCHAR"></result>
+        <result column="descriptions" property="descriptions" jdbcType="VARCHAR"></result>
+        <result column="gmt_create" property="gmtCreate" jdbcType="BIGINT"></result>
+        <result column="gmt_modified" property="gmtModified" jdbcType="BIGINT"></result>
+        <result column="creator" property="creator" jdbcType="INTEGER"></result>
+        <result column="comment_count" property="commentCount" jdbcType="INTEGER"></result>
+        <result column="view_count" property="viewCount" jdbcType="INTEGER"></result>
+        <result column="like_count" property="likeCount" jdbcType="INTEGER"></result>
+        <result column="tag" property="tag" jdbcType="VARCHAR"></result>
+
+    </resultMap>
     <insert id="create" parameterType="com.sceon.community.model.Question" >
         INSERT INTO QUESTION
             (id,title,descriptions,gmt_create,gmt_modified,creator,tag)
@@ -74,4 +87,14 @@
         WHERE
             id=#{id}
     </update>
+    <select id="selectByRelated" parameterType="com.sceon.community.model.Question" resultMap="questionMap">
+        SELECT
+            *
+        FROM
+            question
+        WHERE
+            id!=#{id}
+        AND
+            tag REGEXP #{tag}
+    </select>
 </mapper>

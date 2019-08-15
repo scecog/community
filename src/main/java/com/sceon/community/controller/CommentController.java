@@ -1,8 +1,9 @@
 package com.sceon.community.controller;
 
+import com.sceon.community.dto.CommentDto;
 import com.sceon.community.dto.ResponseDto;
+import com.sceon.community.enums.CommentTypeEnum;
 import com.sceon.community.exception.CustomizeErrorCode;
-import com.sceon.community.mapper.CommentMapper;
 import com.sceon.community.model.Comment;
 import com.sceon.community.dto.CommentCreateDto;
 import com.sceon.community.model.User;
@@ -10,11 +11,11 @@ import com.sceon.community.service.CommentService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * @author shichenchong@inspur.com
@@ -22,8 +23,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Controller
 public class CommentController {
-    @Autowired
-    private CommentMapper commentMapper;
     @Autowired
     private CommentService commentService;
     @ResponseBody
@@ -51,5 +50,12 @@ public class CommentController {
 
 
 
+    }
+    @ResponseBody
+    @GetMapping("/comment/{id}")
+    public ResponseDto<List<CommentDto>> comments(@PathVariable(name = "id") Long id){
+        //System.out.println(id);
+        List<CommentDto> commentDtos = commentService.listByTargetId(id, CommentTypeEnum.COMMENT);
+        return ResponseDto.successOf(commentDtos);
     }
 }

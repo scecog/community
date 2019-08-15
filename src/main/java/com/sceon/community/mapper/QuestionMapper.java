@@ -29,4 +29,5 @@ public interface QuestionMapper {
     int addViewCount(Question question);
 
     void addCommentCount(Question question);
+    List<Question> selectByRelated(Question question);
 }

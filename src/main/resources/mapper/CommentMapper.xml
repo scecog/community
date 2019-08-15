@@ -17,7 +17,15 @@
         WHERE
             parent_id=#{parentId}
     </select>
-    <select id="listByQuestionId" resultType="com.sceon.community.model.Comment">
+    <select id="selectById" resultType="com.sceon.community.model.Comment">
+        SELECT
+            *
+        FROM
+            comment
+        WHERE
+            id=#{id}
+    </select>
+    <select id="listByTargetId" resultType="com.sceon.community.model.Comment">
         SELECT
             *
         FROM
@@ -26,4 +34,12 @@
             parent_id=#{parentId} AND type=#{type}
             ORDER BY gmt_create DESC
     </select>
+    <update id="addCommentCount" parameterType="com.sceon.community.model.Comment">
+        UPDATE
+            comment
+        SET
+            comment_count = comment_count + #{commentCount}
+        WHERE
+            id = #{id}
+    </update>
 </mapper>

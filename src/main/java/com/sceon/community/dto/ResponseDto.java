@@ -4,14 +4,17 @@ import com.sceon.community.exception.CustomizeErrorCode;
 import com.sceon.community.exception.CustomizeException;
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * @author shichenchong@inspur.com
  * data   2019/8/10 14:45
  */
 @Data
-public class ResponseDto {
+public class ResponseDto<T> {
     private Integer code;
     private String message;
+    private T data;
 
    /* public static ResponseDto errorOf(Integer code,String message){
         ResponseDto responseDto = new ResponseDto();
@@ -38,6 +41,13 @@ public class ResponseDto {
         ResponseDto responseDto = new ResponseDto();
         responseDto.setMessage(ex.getMessage());
         responseDto.setCode(ex.getCode());
+        return responseDto;
+    }
+    public static <T> ResponseDto successOf(T t) {
+        ResponseDto responseDto = new ResponseDto();
+        responseDto.setMessage("成功");
+        responseDto.setCode(200);
+        responseDto.setData(t);
         return responseDto;
     }
 }

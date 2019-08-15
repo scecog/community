@@ -15,5 +15,9 @@ public interface CommentMapper {
 
     Comment selectByParentId(Long parentId);
 
-    List<Comment> listByQuestionId(Long parentId, Integer type);
+    List<Comment> listByTargetId(Long parentId, Integer type);
+
+    Comment selectById(Long id);
+
+    void addCommentCount(Comment comment);
 }

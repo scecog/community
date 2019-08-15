@@ -54,11 +54,16 @@ public class CommentService {
 
         } else {
             //回复评论
-            Comment dbComment = commentMapper.selectByParentId(comment.getParentId());
+            //System.out.println(comment.getParentId());
+            Comment dbComment = commentMapper.selectById(comment.getParentId());
+            //System.out.println(dbComment);
             if (dbComment == null) {
                 throw new CustomizeException(CustomizeErrorCode.COMMENT_NOT_FOUND);
             }
-            commentMapper.insertComment(dbComment);
+
+            commentMapper.insertComment(comment);
+            dbComment.setCommentCount(1);
+            commentMapper.addCommentCount(dbComment);
         }
 
     }
@@ -68,9 +73,9 @@ public class CommentService {
      * 然后根据comment 获取到 comment_id 查询出user，进而获取到用户信息，
      * 注入用户信息到commentDto
      */
-    public List<CommentDto> listByQuestionId(Long id) {
+    public List<CommentDto> listByTargetId(Long id, CommentTypeEnum type) {
         //需要设定type为1
-        List<Comment> commentList = commentMapper.listByQuestionId(id, CommentTypeEnum.QUESTION.getType());
+        List<Comment> commentList = commentMapper.listByTargetId(id, type.getType());
         if (commentList.size() == 0) {
             return new ArrayList<>();
         }

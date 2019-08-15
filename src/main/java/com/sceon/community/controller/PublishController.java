@@ -1,11 +1,13 @@
 package com.sceon.community.controller;
 
+import com.sceon.community.cache.TagCache;
 import com.sceon.community.exception.CustomizeErrorCode;
 import com.sceon.community.exception.CustomizeException;
 import com.sceon.community.mapper.QuestionMapper;
 import com.sceon.community.model.Question;
 import com.sceon.community.model.User;
 import com.sceon.community.service.QuestionService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +25,8 @@ public class PublishController {
     @Autowired
     private QuestionService questionService;
     @GetMapping("/publish")
-    public String publish(){
+    public String publish(Model model){
+        model.addAttribute("tags",TagCache.get());
         return "publish";
     }
 
@@ -36,6 +39,7 @@ public class PublishController {
         model.addAttribute("title",title);
         model.addAttribute("descriptions",descriptions);
         model.addAttribute("tag",tag);
+        model.addAttribute("tags",TagCache.get());
         if(title == null || title==""){
             model.addAttribute("error","标题不能为空");
             return "publish";
@@ -46,6 +50,11 @@ public class PublishController {
         }
         if(tag == null || tag == ""){
             model.addAttribute("error","标签不能为空");
+            return "publish";
+        }
+        String invalid = TagCache.filterInvalid(tag);
+        if (StringUtils.isNoneBlank(invalid)){
+            model.addAttribute("error","输入非法标签" + invalid);
             return "publish";
         }
         User user = (User)request.getSession().getAttribute("user");
@@ -76,6 +85,7 @@ public class PublishController {
         model.addAttribute("descriptions",question.getDescriptions());
         model.addAttribute("tag",question.getTag());
         model.addAttribute("id",id);
+        model.addAttribute("tags",TagCache.get());
         return "publish";
     }
 }
