@@ -8,7 +8,7 @@
         <result column="descriptions" property="descriptions" jdbcType="VARCHAR"></result>
         <result column="gmt_create" property="gmtCreate" jdbcType="BIGINT"></result>
         <result column="gmt_modified" property="gmtModified" jdbcType="BIGINT"></result>
-        <result column="creator" property="creator" jdbcType="INTEGER"></result>
+        <result column="creator" property="creator" jdbcType="BIGINT"></result>
         <result column="comment_count" property="commentCount" jdbcType="INTEGER"></result>
         <result column="view_count" property="viewCount" jdbcType="INTEGER"></result>
         <result column="like_count" property="likeCount" jdbcType="INTEGER"></result>

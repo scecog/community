@@ -1,7 +1,11 @@
 package com.sceon.community.controller;
 
+import com.sceon.community.enums.NotifactionStatusEnum;
+import com.sceon.community.model.Notification;
 import com.sceon.community.model.User;
 import com.sceon.community.dto.PageDto;
+import com.sceon.community.service.CommentService;
+import com.sceon.community.service.NotificationService;
 import com.sceon.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +24,10 @@ import javax.servlet.http.HttpServletRequest;
 public class ProfileController {
     @Autowired
     private QuestionService questionService;
+    @Autowired
+    private CommentService commentService;
+    @Autowired
+    private NotificationService notificationService;
     @GetMapping("/profile/{action}")
     public String profile(@PathVariable(name = "action") String action,
                           Model model, HttpServletRequest request,
@@ -30,14 +38,20 @@ public class ProfileController {
             return "index";
         }
         if("question".equals(action)) {
+            PageDto pagedto = questionService.list(user.getId(), pageNum, pageSize);
+            model.addAttribute("pagedto",pagedto);
             model.addAttribute("section","question");
             model.addAttribute("sectionName","我的提问");
         }else if("replies".equals(action)){
+            PageDto pageDto = notificationService.list(user.getId(),pageNum,pageSize);
+            Integer unReadCount = notificationService.unReadCount(user.getId(), NotifactionStatusEnum.UNREAD.getStatus());
+            model.addAttribute("pagedto",pageDto);
             model.addAttribute("section","replies");
             model.addAttribute("sectionName","最新回复");
+            model.addAttribute("unReadCount",unReadCount);
+
         }
-        PageDto pagedto = questionService.list(user.getId(), pageNum, pageSize);
-        model.addAttribute("pagedto",pagedto);
+
         return "profile";
     }
 }

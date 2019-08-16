@@ -11,7 +11,7 @@ public class Comment {
     private Long id;
     private Long parentId;
     private Integer type;
-    private int commentId;
+    private Long commentId;
     private String commentContent;
     private Long gmtCreate;
     private Long gmtModified;

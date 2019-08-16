@@ -2,12 +2,16 @@ package com.sceon.community.service;
 
 import com.sceon.community.dto.CommentDto;
 import com.sceon.community.enums.CommentTypeEnum;
+import com.sceon.community.enums.NotifactionStatusEnum;
+import com.sceon.community.enums.NotifactionTypeEnum;
 import com.sceon.community.exception.CustomizeErrorCode;
 import com.sceon.community.exception.CustomizeException;
 import com.sceon.community.mapper.CommentMapper;
+import com.sceon.community.mapper.NotificationMapper;
 import com.sceon.community.mapper.QuestionMapper;
 import com.sceon.community.mapper.UserMapper;
 import com.sceon.community.model.Comment;
+import com.sceon.community.model.Notification;
 import com.sceon.community.model.Question;
 import com.sceon.community.model.User;
 import org.springframework.beans.BeanUtils;
@@ -32,9 +36,11 @@ public class CommentService {
     private QuestionMapper questionMapper;
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private NotificationMapper notificationMapper;
 
     @Transactional
-    public void insertComment(Comment comment) {
+    public void insertComment(Comment comment,User user) {
         if (comment.getParentId() == null || comment.getParentId() == 0) {
             throw new CustomizeException(CustomizeErrorCode.TARGET_PARAM_NOT_FOUND);
         }
@@ -51,6 +57,7 @@ public class CommentService {
             commentMapper.insertComment(comment);
             question.setCommentCount(1);
             questionMapper.addCommentCount(question);
+            createNotify(comment, question.getCreator(),NotifactionTypeEnum.REPLAY_QUESTION,user,question.getTitle());
 
         } else {
             //回复评论
@@ -64,8 +71,29 @@ public class CommentService {
             commentMapper.insertComment(comment);
             dbComment.setCommentCount(1);
             commentMapper.addCommentCount(dbComment);
+            //回复评论进插入到通知数据库中
+            createNotify(comment,dbComment.getCommentId(),NotifactionTypeEnum.REPLAY_COMMENT,user,dbComment.getCommentContent());
         }
 
+    }
+    /*
+     * 回复问题插入通知
+     */
+    private void createNotify(Comment comment, Long receiver, NotifactionTypeEnum replay,User user,String title) {
+        //在回复问题之后需要插入到通知的列表中，因为是回复问题，所以需要获取到parentid
+        //进而获取到问题列表的creator来作为接收方
+        Notification notification = new Notification();
+        notification.setNotifier(comment.getCommentId());
+        //获取到回复的问题的id，查询出问题的所有信息
+        //Long receiver = question.getCreator();
+        notification.setReceiver(receiver);
+        notification.setGmtCreate(System.currentTimeMillis());
+        notification.setType(replay.getStatus());
+        notification.setOuterId(comment.getParentId());
+        notification.setStatus(NotifactionStatusEnum.UNREAD.getStatus());
+        notification.setOuterTitle(title);
+        notification.setNotifierName(user.getName());
+        notificationMapper.insertNotification(notification);
     }
 
     /*
@@ -80,11 +108,11 @@ public class CommentService {
             return new ArrayList<>();
         }
         //获取去重的评论人id
-        List<Integer> userIds = commentList.stream().map(comment -> comment.getCommentId()).collect(Collectors.toList());
+        List<Long> userIds = commentList.stream().map(comment -> comment.getCommentId()).collect(Collectors.toList());
         // 获取评论人的信息 转换为map
         //System.out.println(userIds);
         List<User> users = userMapper.listByIds(userIds);
-        Map<Integer, User> userMap = users.stream().collect(Collectors.toMap(user -> user.getId(), user -> user));
+        Map<Long, User> userMap = users.stream().collect(Collectors.toMap(user -> user.getId(), user -> user));
         //将评论的map转换为list
         List<CommentDto> commentDtos = commentList.stream().map(comment -> {
             CommentDto commentDto = new CommentDto();

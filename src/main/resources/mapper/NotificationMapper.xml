@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sceon.community.mapper.NotificationMapper">
+    <insert id="insertNotification" parameterType="com.sceon.community.model.Notification">
+        INSERT INTO
+            notification
+        VALUES
+            (#{id},#{notifier},#{receiver},#{outerId},#{type},#{gmtCreate},#{status},#{notifierName},#{outerTitle})
+    </insert>
+    <select id="countByUnread"  resultType="java.lang.Integer">
+        SELECT
+            COUNT(1)
+        FROM
+            notification
+        WHERE
+            receiver=#{id} and status=#{status}
+    </select>
+    <select id="list" resultType="com.sceon.community.model.Notification">
+        SELECT
+            *
+        FROM
+            notification
+        WHERE
+            notifier=#{id}
+        ORDER BY
+            gmt_create desc
+        LIMIT
+            #{offset},#{pageSize}
+
+    </select>
+    <select id="findById" resultType="com.sceon.community.model.Notification">
+        SELECT
+            *
+        FROM
+            notification
+        WHERE
+            id=#{id}
+    </select>
+    <update id="updateRead" parameterType="com.sceon.community.model.Notification">
+        UPDATE
+            notification
+        SET
+            status = #{status}
+        WHERE
+            id=#{id}
+    </update>
+    <select id="countByReceiver"  resultType="java.lang.Integer">
+        SELECT
+            COUNT(1)
+        FROM
+            notification
+        WHERE
+            receiver=#{id}
+    </select>
+</mapper>

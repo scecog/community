@@ -17,9 +17,9 @@ public interface QuestionMapper {
 
     Integer count();
 
-    List<Question> list(int userId, Integer offset, Integer pageSize);
+    List<Question> list(Long userId, Integer offset, Integer pageSize);
 
-    Integer countByUserId(int userId);
+    Integer countByUserId(Long userId);
 
 
     Question findById(Long id);

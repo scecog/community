@@ -4,8 +4,10 @@ import com.sceon.community.dto.CommentDto;
 import com.sceon.community.dto.ResponseDto;
 import com.sceon.community.enums.CommentTypeEnum;
 import com.sceon.community.exception.CustomizeErrorCode;
+import com.sceon.community.mapper.NotificationMapper;
 import com.sceon.community.model.Comment;
 import com.sceon.community.dto.CommentCreateDto;
+import com.sceon.community.model.Notification;
 import com.sceon.community.model.User;
 import com.sceon.community.service.CommentService;
 import org.apache.commons.lang3.StringUtils;
@@ -25,6 +27,8 @@ import java.util.List;
 public class CommentController {
     @Autowired
     private CommentService commentService;
+    @Autowired
+    private NotificationMapper notificationMapper;
     @ResponseBody
     @PostMapping("/comment")
     public Object post(@RequestBody CommentCreateDto commentdto,
@@ -43,7 +47,8 @@ public class CommentController {
         comment.setGmtCreate(System.currentTimeMillis());
         comment.setGmtModified(System.currentTimeMillis());
         comment.setCommentId(user.getId());
-        commentService.insertComment(comment);
+        commentService.insertComment(comment,user);
+
             return ResponseDto.successOf();
 
             //return ResponseDto.errorOf(CustomizeErrorCode.INSERT_ERROR);

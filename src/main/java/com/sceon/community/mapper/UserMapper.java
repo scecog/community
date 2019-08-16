@@ -15,7 +15,7 @@ public interface UserMapper {
     void insert(User user);
     User findByToken(String token);
 
-    User findById(Integer id);
+    User findById(Long id);
 
     void createOrUpdate(User user);
 
@@ -24,5 +24,5 @@ public interface UserMapper {
 
     void update(User dbUser);
 
-    List<User> listByIds(List<Integer> userIds);
+    List<User> listByIds(List<Long> userIds);
 }

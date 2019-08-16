@@ -60,7 +60,7 @@ public class QuestionService {
     }
 
 
-    public PageDto list(int userId, Integer pageNum, Integer pageSize) {
+    public PageDto list(Long userId, Integer pageNum, Integer pageSize) {
         if(pageNum < 1){
             pageNum = 1;
         }

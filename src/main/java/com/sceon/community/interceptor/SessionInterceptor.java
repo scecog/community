@@ -1,7 +1,9 @@
 package com.sceon.community.interceptor;
 
+import com.sceon.community.enums.NotifactionStatusEnum;
 import com.sceon.community.mapper.UserMapper;
 import com.sceon.community.model.User;
+import com.sceon.community.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,11 +19,11 @@ import javax.servlet.http.HttpServletResponse;
 public class SessionInterceptor implements HandlerInterceptor {
     @Autowired
     private UserMapper userMapper;
-
+    @Autowired
+    private NotificationService notificationService;
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Cookie[] cookies = request.getCookies();
-
         if (cookies != null && cookies.length != 0) {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("token")) {
@@ -29,6 +31,8 @@ public class SessionInterceptor implements HandlerInterceptor {
                     User user = userMapper.findByToken(token);
                     if (user != null) {
                         request.getSession().setAttribute("user", user);
+                        Integer unReadCount = notificationService.unReadCount(user.getId(), NotifactionStatusEnum.UNREAD.getStatus());
+                        request.getSession().setAttribute("unread",unReadCount);
                     }
                     break;
                 }
