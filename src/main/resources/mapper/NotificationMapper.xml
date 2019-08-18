@@ -22,7 +22,7 @@
         FROM
             notification
         WHERE
-            notifier=#{id}
+            receiver=#{id}
         ORDER BY
             gmt_create desc
         LIMIT

@@ -1,5 +1,6 @@
 package com.sceon.community.service;
 
+import com.sceon.community.dto.QuestionQueryDto;
 import com.sceon.community.exception.CustomizeErrorCode;
 import com.sceon.community.exception.CustomizeException;
 import com.sceon.community.mapper.QuestionMapper;
@@ -31,17 +32,26 @@ public class QuestionService {
     @Autowired
     private QuestionMapper questionMapper;
 
-    public PageDto listQuestion(Integer pageNum, Integer pageSize) {
+    public PageDto listQuestion(Integer pageNum, Integer pageSize,String search) {
+        if(StringUtils.isNoneBlank(search)){
+            search = StringUtils.replace(search, " ", "|");
+
+        }
+
         if(pageNum < 1){
             pageNum = 1;
         }
         Integer offset = pageSize * (pageNum - 1);
-        Integer count = questionMapper.count();
+        QuestionQueryDto questionQueryDto = new QuestionQueryDto();
+        questionQueryDto.setSearch(search);
+        Integer count = questionMapper.countBySerach(questionQueryDto);
         //针对于页数超过总页数进行处理，
         if(offset > count){
             offset = count-1;
         }
-        List<Question> questionList = questionMapper.listQuestion(offset,pageSize);
+        questionQueryDto.setPageNum(offset);
+        questionQueryDto.setPageSize(pageSize);
+        List<Question> questionList = questionMapper.listBySearch(questionQueryDto);
         List<QuestionDto> questionDtoList = new ArrayList<>();
         PageDto pageDto = new PageDto();
         for (Question question: questionList) {

@@ -28,6 +28,8 @@
             *
         FROM
             question
+        ORDER BY
+            gmt_create DESC
         LIMIT
             #{offset},#{pageSize}
     </select>
@@ -96,5 +98,30 @@
             id!=#{id}
         AND
             tag REGEXP #{tag}
+    </select>
+    <select id="countBySerach" resultType="java.lang.Integer">
+        SELECT
+            count(*)
+        FROM
+            question
+        <where>
+            <if test="search != null and search != ''" >
+               and title REGEXP #{search}
+            </if>
+        </where>
+    </select>
+    <select id="listBySearch" resultMap="questionMap">
+        SELECT
+            *
+        FROM question
+        <where>
+            <if test="search != null and search != ''" >
+                and title REGEXP #{search}
+            </if>
+        </where>
+        ORDER BY
+        gmt_create DESC
+        LIMIT
+        #{pageNum},#{pageSize}
     </select>
 </mapper>

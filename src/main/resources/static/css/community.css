@@ -100,3 +100,7 @@ body {
 .message{
     margin-top: 18px;
 }
+.footer{
+    text-align: center;
+    color: #666;
+}

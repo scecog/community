@@ -43,6 +43,9 @@
                                 delay:0,
                                 watch:false,
                                 placeholder:"请输入问题详情",
+                                imageUpload:true,
+                                imageFormats:["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                                imageUploadURL:"/file/upload",
 
                             });
                         });
@@ -107,5 +110,6 @@
             </div>
         </div>
     </div>
+<div th:insert="footer :: foot"></div>
 </body>
 </html>

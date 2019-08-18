@@ -82,6 +82,9 @@ public class CommentService {
     private void createNotify(Comment comment, Long receiver, NotifactionTypeEnum replay,User user,String title) {
         //在回复问题之后需要插入到通知的列表中，因为是回复问题，所以需要获取到parentid
         //进而获取到问题列表的creator来作为接收方
+        if(receiver == comment.getCommentId()){
+            return;
+        }
         Notification notification = new Notification();
         notification.setNotifier(comment.getCommentId());
         //获取到回复的问题的id，查询出问题的所有信息

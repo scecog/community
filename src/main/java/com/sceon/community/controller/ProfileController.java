@@ -43,6 +43,7 @@ public class ProfileController {
             model.addAttribute("section","question");
             model.addAttribute("sectionName","我的提问");
         }else if("replies".equals(action)){
+            //50 获取到的list
             PageDto pageDto = notificationService.list(user.getId(),pageNum,pageSize);
             Integer unReadCount = notificationService.unReadCount(user.getId(), NotifactionStatusEnum.UNREAD.getStatus());
             model.addAttribute("pagedto",pageDto);

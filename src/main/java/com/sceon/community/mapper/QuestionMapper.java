@@ -1,5 +1,6 @@
 package com.sceon.community.mapper;
 
+import com.sceon.community.dto.QuestionQueryDto;
 import com.sceon.community.model.Question;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -30,4 +31,8 @@ public interface QuestionMapper {
 
     void addCommentCount(Question question);
     List<Question> selectByRelated(Question question);
+
+    Integer countBySerach(QuestionQueryDto questionQueryDto);
+
+    List<Question> listBySearch(QuestionQueryDto questionQueryDto);
 }

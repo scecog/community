@@ -28,6 +28,7 @@ public class NotificationService {
     private UserMapper userMapper;
     @Autowired
     private CommentMapper commentMapper;
+    //50
     public PageDto list(Long id, Integer pageNum, Integer pageSize) {
         if(pageNum < 1){
             pageNum = 1;

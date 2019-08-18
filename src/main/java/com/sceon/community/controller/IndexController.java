@@ -23,9 +23,11 @@ public class IndexController {
     //分页功能需要页码和每页的数据量，计算出偏移量，例如第一页就是从0开始计算到5
     public String index(HttpServletRequest request, Model model,
                         @RequestParam(name = "pageNum",defaultValue = "1") Integer pageNum,
-                        @RequestParam(name = "pageSize",defaultValue = "5") Integer pageSize) {
-        PageDto page = questionService.listQuestion(pageNum,pageSize);
+                        @RequestParam(name = "pageSize",defaultValue = "5") Integer pageSize,
+                        @RequestParam(name = "search",required = false) String search) {
+        PageDto page = questionService.listQuestion(pageNum,pageSize,search);
         //System.out.println(page.getList());
+        model.addAttribute("search",search);
         model.addAttribute("pagei",page);
         return "index";
     }
