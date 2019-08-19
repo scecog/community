@@ -1,4 +1,19 @@
 #问答社区
+## 部署
+### 依赖
+-git
+-JDK
+-Maven
+-Mysql
+## 步骤
+- yum update
+- yum install git
+- mkdir APP
+- git clone https://github.com/scecog/community.git
+- yum install maven
+- mvn clean compile package
+- java -jar -Dspring.profiles.active=production target/communi
+  ty-0.0.1-SNAPSHOT.jar
 #资料
 [GithubOAuth](https://developer.github.com/apps/)
 #步骤
@@ -73,5 +88,9 @@ tag VARCHAR(256)
 15. 实现了评论问题列表的功能，对于其中使用的jdk8 的特性需要掌握，优化了回复列表的页面
 16. 实现了二级评论的功能，并且实现了标签的规范化，来以此标签查询到相关的问题展示出来
 17. 实现了最新回复的功能及通知功能，并且实现了使用editer.md实现了markdown语法的使用
+
+  
+
+
 
 
