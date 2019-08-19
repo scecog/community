@@ -16,7 +16,7 @@
 
     </resultMap>
     <insert id="create" parameterType="com.sceon.community.model.Question" >
-        INSERT INTO questionatus
+        INSERT INTO question
             (id,title,descriptions,gmt_create,gmt_modified,creator,tag)
         VALUES
             (#{id},#{title},#{descriptions},#{gmtCreate},#{gmtModified},#{creator},#{tag})
