@@ -1409,3 +1409,180 @@ Caused by: com.mysql.cj.exceptions.WrongArgumentException: No timezone mapping e
 2019-08-19 16:01:45.098  INFO 7364 --- [restartedMain] c.sceon.community.CommunityApplication   : Started CommunityApplication in 0.698 seconds (JVM running for 35.188)
 2019-08-19 16:01:45.100  INFO 7364 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
 2019-08-19 16:03:43.425  INFO 7364 --- [Thread-19] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-19 16:03:43.816  INFO 7364 --- [restartedMain] c.sceon.community.CommunityApplication   : Starting CommunityApplication on shichenchong00 with PID 7364 (D:\community\target\classes started by shichenchong in D:\community)
+2019-08-19 16:03:43.817  INFO 7364 --- [restartedMain] c.sceon.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-19 16:03:44.288  INFO 7364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-08-19 16:03:44.289  INFO 7364 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-19 16:03:44.289  INFO 7364 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-19 16:03:44.339  INFO 7364 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-19 16:03:44.339  INFO 7364 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 519 ms
+2019-08-19 16:03:44.519  INFO 7364 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-19 16:03:44.561  INFO 7364 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-19 16:03:44.646  INFO 7364 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-19 16:03:44.662  INFO 7364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-08-19 16:03:44.663  INFO 7364 --- [restartedMain] c.sceon.community.CommunityApplication   : Started CommunityApplication in 0.867 seconds (JVM running for 154.753)
+2019-08-19 16:03:44.665  INFO 7364 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-08-19 16:56:37.779  INFO 7364 --- [Thread-30] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-19 16:56:43.823  INFO 18656 --- [restartedMain] c.sceon.community.CommunityApplication   : Starting CommunityApplication on shichenchong00 with PID 18656 (D:\community\target\classes started by shichenchong in D:\community)
+2019-08-19 16:56:43.827  INFO 18656 --- [restartedMain] c.sceon.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-19 16:56:43.878  INFO 18656 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-08-19 16:56:43.879  INFO 18656 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-08-19 16:56:45.441  INFO 18656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-08-19 16:56:45.459  INFO 18656 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-19 16:56:45.459  INFO 18656 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-19 16:56:45.566  INFO 18656 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-19 16:56:45.566  INFO 18656 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1687 ms
+2019-08-19 16:56:46.161  INFO 18656 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-19 16:56:46.355  INFO 18656 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-19 16:56:46.562  INFO 18656 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-19 16:56:46.606  INFO 18656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-08-19 16:56:46.609  INFO 18656 --- [restartedMain] c.sceon.community.CommunityApplication   : Started CommunityApplication in 3.23 seconds (JVM running for 4.28)
+2019-08-19 17:39:56.716  INFO 18656 --- [Thread-15] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-19 20:36:52.697  INFO 10648 --- [restartedMain] c.sceon.community.CommunityApplication   : Starting CommunityApplication on shichenchong00 with PID 10648 (D:\community\target\classes started by shichenchong in D:\community)
+2019-08-19 20:36:52.702  INFO 10648 --- [restartedMain] c.sceon.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-19 20:36:52.803  INFO 10648 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-08-19 20:36:52.804  INFO 10648 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-08-19 20:36:56.339  INFO 10648 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-08-19 20:36:56.384  INFO 10648 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-19 20:36:56.385  INFO 10648 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-19 20:36:56.596  INFO 10648 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-19 20:36:56.597  INFO 10648 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3793 ms
+2019-08-19 20:36:57.720  INFO 10648 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-19 20:36:57.987  INFO 10648 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-19 20:36:58.435  INFO 10648 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-19 20:36:58.540  INFO 10648 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-08-19 20:36:58.546  INFO 10648 --- [restartedMain] c.sceon.community.CommunityApplication   : Started CommunityApplication in 6.744 seconds (JVM running for 10.998)
+2019-08-19 20:37:40.020  INFO 10648 --- [Thread-19] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-19 20:37:41.014  INFO 10648 --- [restartedMain] c.sceon.community.CommunityApplication   : Starting CommunityApplication on shichenchong00 with PID 10648 (D:\community\target\classes started by shichenchong in D:\community)
+2019-08-19 20:37:41.015  INFO 10648 --- [restartedMain] c.sceon.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-19 20:37:42.017  INFO 10648 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-19 20:37:42.019  INFO 10648 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-19 20:37:42.020  INFO 10648 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-19 20:37:42.141  INFO 10648 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-19 20:37:42.142  INFO 10648 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1122 ms
+2019-08-19 20:37:42.536  INFO 10648 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-19 20:37:42.663  INFO 10648 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-19 20:37:42.910  INFO 10648 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-19 20:37:42.957  INFO 10648 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-19 20:37:42.959  INFO 10648 --- [restartedMain] c.sceon.community.CommunityApplication   : Started CommunityApplication in 2.006 seconds (JVM running for 55.41)
+2019-08-19 20:37:42.963  INFO 10648 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-08-19 20:37:43.700  INFO 10648 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-19 20:37:43.702  INFO 10648 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-19 20:37:43.723  INFO 10648 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
+2019-08-19 20:37:43.940  INFO 10648 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-19 20:37:44.441  INFO 10648 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-19 20:37:44.465 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.m.QuestionMapper.countBySerach     : ==>  Preparing: SELECT count(*) FROM question 
+2019-08-19 20:37:44.512 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.m.QuestionMapper.countBySerach     : ==> Parameters: 
+2019-08-19 20:37:44.584 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.m.QuestionMapper.countBySerach     : <==      Total: 1
+2019-08-19 20:37:44.589 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.m.QuestionMapper.listBySearch      : ==>  Preparing: SELECT * FROM question ORDER BY gmt_create DESC LIMIT ?,? 
+2019-08-19 20:37:44.591 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.m.QuestionMapper.listBySearch      : ==> Parameters: 0(Integer), 5(Integer)
+2019-08-19 20:37:44.628 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.m.QuestionMapper.listBySearch      : <==      Total: 5
+2019-08-19 20:37:44.632 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:37:44.633 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 50(Long)
+2019-08-19 20:37:44.663 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:37:44.697 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:37:44.699 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 50(Long)
+2019-08-19 20:37:44.718 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:37:44.719 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:37:44.720 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 50(Long)
+2019-08-19 20:37:44.737 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:37:44.739 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:37:44.739 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 51(Long)
+2019-08-19 20:37:44.764 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:37:44.765 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:37:44.766 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 51(Long)
+2019-08-19 20:37:44.783 DEBUG 10648 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:38:48.479  INFO 10648 --- [Thread-33] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-19 20:38:48.481  INFO 10648 --- [Thread-33] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-19 20:38:48.501  INFO 10648 --- [Thread-33] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-19 20:41:20.068  INFO 2876 --- [restartedMain] c.sceon.community.CommunityApplication   : Starting CommunityApplication on shichenchong00 with PID 2876 (D:\community\target\classes started by shichenchong in D:\community)
+2019-08-19 20:41:20.075  INFO 2876 --- [restartedMain] c.sceon.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-19 20:41:20.197  INFO 2876 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-08-19 20:41:20.198  INFO 2876 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-08-19 20:41:22.758  INFO 2876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-19 20:41:22.791  INFO 2876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-19 20:41:22.792  INFO 2876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-19 20:41:22.969  INFO 2876 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-19 20:41:22.970  INFO 2876 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2771 ms
+2019-08-19 20:41:23.942  INFO 2876 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-19 20:41:24.158  INFO 2876 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-19 20:41:24.434  INFO 2876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-19 20:41:24.524  INFO 2876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-19 20:41:24.529  INFO 2876 --- [restartedMain] c.sceon.community.CommunityApplication   : Started CommunityApplication in 5.269 seconds (JVM running for 9.462)
+2019-08-19 20:41:55.146  INFO 2876 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-19 20:41:55.147  INFO 2876 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-19 20:41:55.160  INFO 2876 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2019-08-19 20:41:55.276  INFO 2876 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-19 20:41:55.702  INFO 2876 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-19 20:41:55.739 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.m.QuestionMapper.countBySerach     : ==>  Preparing: SELECT count(*) FROM question 
+2019-08-19 20:41:55.843 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.m.QuestionMapper.countBySerach     : ==> Parameters: 
+2019-08-19 20:41:56.017 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.m.QuestionMapper.countBySerach     : <==      Total: 1
+2019-08-19 20:41:56.031 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.m.QuestionMapper.listBySearch      : ==>  Preparing: SELECT * FROM question ORDER BY gmt_create DESC LIMIT ?,? 
+2019-08-19 20:41:56.036 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.m.QuestionMapper.listBySearch      : ==> Parameters: 0(Integer), 5(Integer)
+2019-08-19 20:41:56.077 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.m.QuestionMapper.listBySearch      : <==      Total: 5
+2019-08-19 20:41:56.081 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:41:56.083 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 50(Long)
+2019-08-19 20:41:56.114 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:41:56.154 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:41:56.155 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 50(Long)
+2019-08-19 20:41:56.182 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:41:56.183 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:41:56.184 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 50(Long)
+2019-08-19 20:41:56.209 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:41:56.212 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:41:56.213 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 51(Long)
+2019-08-19 20:41:56.247 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:41:56.251 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:41:56.252 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 51(Long)
+2019-08-19 20:41:56.285 DEBUG 2876 --- [http-nio-8080-exec-1] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:47:23.899 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.m.QuestionMapper.countBySerach     : ==>  Preparing: SELECT count(*) FROM question 
+2019-08-19 20:47:23.900 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.m.QuestionMapper.countBySerach     : ==> Parameters: 
+2019-08-19 20:47:23.918 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.m.QuestionMapper.countBySerach     : <==      Total: 1
+2019-08-19 20:47:23.920 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.m.QuestionMapper.listBySearch      : ==>  Preparing: SELECT * FROM question ORDER BY gmt_create DESC LIMIT ?,? 
+2019-08-19 20:47:23.921 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.m.QuestionMapper.listBySearch      : ==> Parameters: 0(Integer), 5(Integer)
+2019-08-19 20:47:23.942 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.m.QuestionMapper.listBySearch      : <==      Total: 5
+2019-08-19 20:47:23.943 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:47:23.944 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 50(Long)
+2019-08-19 20:47:23.962 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:47:23.964 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:47:23.966 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 50(Long)
+2019-08-19 20:47:23.986 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:47:23.987 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:47:23.988 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 50(Long)
+2019-08-19 20:47:24.005 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:47:24.007 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:47:24.009 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 51(Long)
+2019-08-19 20:47:24.027 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:47:24.028 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : ==>  Preparing: SELECT * FROM user WHERE id = ? 
+2019-08-19 20:47:24.030 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : ==> Parameters: 51(Long)
+2019-08-19 20:47:24.049 DEBUG 2876 --- [http-nio-8080-exec-7] c.s.c.mapper.UserMapper.findById         : <==      Total: 1
+2019-08-19 20:48:49.213  INFO 2876 --- [Thread-15] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-19 20:48:49.215  INFO 2876 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-19 20:48:49.226  INFO 2876 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-19 20:48:50.169  INFO 2876 --- [restartedMain] c.sceon.community.CommunityApplication   : Starting CommunityApplication on shichenchong00 with PID 2876 (D:\community\target\classes started by shichenchong in D:\community)
+2019-08-19 20:48:50.170  INFO 2876 --- [restartedMain] c.sceon.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-19 20:48:51.055  INFO 2876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-08-19 20:48:51.057  INFO 2876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-19 20:48:51.058  INFO 2876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-19 20:48:51.145  INFO 2876 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-19 20:48:51.145  INFO 2876 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 962 ms
+2019-08-19 20:48:51.454  INFO 2876 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-19 20:48:51.527  INFO 2876 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-19 20:48:51.721  INFO 2876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-19 20:48:51.761  INFO 2876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-08-19 20:48:51.763  INFO 2876 --- [restartedMain] c.sceon.community.CommunityApplication   : Started CommunityApplication in 1.694 seconds (JVM running for 456.697)
+2019-08-19 20:48:51.767  INFO 2876 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-08-19 20:49:11.043  INFO 2876 --- [Thread-24] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-19 20:49:11.832  INFO 2876 --- [restartedMain] c.sceon.community.CommunityApplication   : Starting CommunityApplication on shichenchong00 with PID 2876 (D:\community\target\classes started by shichenchong in D:\community)
+2019-08-19 20:49:11.833  INFO 2876 --- [restartedMain] c.sceon.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-19 20:49:12.493  INFO 2876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-08-19 20:49:12.493  INFO 2876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-19 20:49:12.493  INFO 2876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-19 20:49:12.556  INFO 2876 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-19 20:49:12.556  INFO 2876 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 719 ms
+2019-08-19 20:49:12.842  INFO 2876 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-19 20:49:12.926  INFO 2876 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-19 20:49:13.159  INFO 2876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-19 20:49:13.200  INFO 2876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-08-19 20:49:13.201  INFO 2876 --- [restartedMain] c.sceon.community.CommunityApplication   : Started CommunityApplication in 1.416 seconds (JVM running for 478.135)
+2019-08-19 20:49:13.204  INFO 2876 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
