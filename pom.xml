@@ -117,9 +117,9 @@
                     <configurationFile>src/main/resources/generatorConfig.xml</configurationFile>
                     <verbose>true</verbose>
                     <overwrite>true</overwrite>
-                    <jdbcURL>${db.url}</jdbcURL>
-                    <jdbcUserId>${db.user}</jdbcUserId>
-                    <jdbcPassword>${db.password}</jdbcPassword>
+                    <url>${db.url}</url>
+                    <user>${db.user}</user>
+                    <password>${db.password}</password>
                 </configuration>
                 <dependencies>
                     <dependency>
