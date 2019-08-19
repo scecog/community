@@ -43,7 +43,7 @@
         SELECT
             *
         FROM
-            QUESTION
+            question
         WHERE
             creator=#{userId}
         LIMIT
@@ -53,7 +53,7 @@
         SELECT
             count(1)
         FROM
-            QUESTION
+            question
         WHERE
             creator=#{userId}
     </select>
@@ -61,13 +61,13 @@
         SELECT
             *
         FROM
-            QUESTION
+            question
         WHERE
             id=#{id}
     </select>
     <update id="update" parameterType="com.sceon.community.model.Question">
         UPDATE
-            QUESTION
+            question
         SET
             TITLE=#{title},DESCRIPTIONS=#{descriptions},gmt_modified=#{gmtModified},view_count=#{viewCount},comment_count=#{commentCount},TAG=#{tag}
         WHERE
@@ -75,7 +75,7 @@
     </update>
     <update id="addViewCount" parameterType="com.sceon.community.model.Question">
         UPDATE
-            QUESTION
+            question
         SET
             view_count=view_count+#{viewCount}
         WHERE
@@ -83,7 +83,7 @@
     </update>
     <update id="addCommentCount" parameterType="com.sceon.community.model.Question">
         UPDATE
-            QUESTION
+            question
         SET
             comment_count=comment_count+#{commentCount}
         WHERE

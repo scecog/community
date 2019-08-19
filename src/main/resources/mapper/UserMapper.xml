@@ -20,7 +20,7 @@
         SELECT
             ID,ACCOUNT_ID,NAME,TOKEN,GMT_CREATE,GMT_MODIFIED
         FROM
-            USER
+            user
         WHERE
             TOKEN=#{token}
     </select>

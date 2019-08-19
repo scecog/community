@@ -1352,3 +1352,17 @@ Caused by: com.mysql.cj.exceptions.WrongArgumentException: No timezone mapping e
 2019-08-19 15:26:29.987  INFO 11700 --- [restartedMain] c.sceon.community.CommunityApplication   : Started CommunityApplication in 0.674 seconds (JVM running for 1651.192)
 2019-08-19 15:26:29.989  INFO 11700 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
 2019-08-19 15:27:33.860  INFO 11700 --- [Thread-19] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-19 15:27:34.280  INFO 11700 --- [restartedMain] c.sceon.community.CommunityApplication   : Starting CommunityApplication on shichenchong00 with PID 11700 (D:\community\target\classes started by shichenchong in D:\community)
+2019-08-19 15:27:34.280  INFO 11700 --- [restartedMain] c.sceon.community.CommunityApplication   : No active profile set, falling back to default profiles: default
+2019-08-19 15:27:34.759  INFO 11700 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-08-19 15:27:34.760  INFO 11700 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-19 15:27:34.761  INFO 11700 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-19 15:27:34.782  INFO 11700 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-19 15:27:34.782  INFO 11700 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 499 ms
+2019-08-19 15:27:34.951  INFO 11700 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-19 15:27:34.984  INFO 11700 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-19 15:27:35.064  INFO 11700 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-19 15:27:35.079  INFO 11700 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-08-19 15:27:35.080  INFO 11700 --- [restartedMain] c.sceon.community.CommunityApplication   : Started CommunityApplication in 0.825 seconds (JVM running for 1716.284)
+2019-08-19 15:27:35.081  INFO 11700 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-08-19 15:35:13.498  INFO 11700 --- [Thread-25] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
