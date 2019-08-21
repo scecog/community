@@ -1586,3 +1586,4 @@ Caused by: com.mysql.cj.exceptions.WrongArgumentException: No timezone mapping e
 2019-08-19 20:49:13.200  INFO 2876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
 2019-08-19 20:49:13.201  INFO 2876 --- [restartedMain] c.sceon.community.CommunityApplication   : Started CommunityApplication in 1.416 seconds (JVM running for 478.135)
 2019-08-19 20:49:13.204  INFO 2876 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-08-19 21:30:40.018  INFO 2876 --- [Thread-35] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
