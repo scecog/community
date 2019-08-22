@@ -30,11 +30,11 @@
                     <div class="media-body">
                         <h4 class="media-heading">
                             <a th:href="@{'/question/' + ${questiondto.id}}" th:text="${questiondto.title}"></a>
+                            <a th:href="@{'/delete/' + ${questiondto.id}}"
+                               th:if="${session.user != null && session.user.id==questiondto.creator}">
+                                <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                            </a>
                         </h4>
-                        <a th:href="@{'/delete/' + ${questiondto.id}}"
-                           th:if="${session.user != null && session.user.id==questiondto.creator}">
-                            <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-                        </a>
 
                         <!--<span th:text="${questiondto.descriptions}"></span> <br>-->
                         <span class="text-desc"><span th:text="${questiondto.commentCount}"></span> 个回复 • <span th:text="${questiondto.viewCount}"></span> 次浏览 • <span th:text="${#dates.format(questiondto.gmtCreate,'yyyy-MM-dd HH:mm')}"></span></span>

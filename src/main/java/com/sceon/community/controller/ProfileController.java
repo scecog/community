@@ -60,7 +60,10 @@ public class ProfileController {
     public String deleteQuestion(@PathVariable(name = "id") Long id,
                                  HttpServletRequest request){
         User user = (User)request.getSession().getAttribute("user");
+        if(user == null){
+            return "redirect:/";
+        }
         questionService.deleteById(id,user);
-        return "profile";
+        return "redirect:/profile/question";
     }
 }
