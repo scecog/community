@@ -35,4 +35,6 @@ public interface QuestionMapper {
     Integer countBySerach(QuestionQueryDto questionQueryDto);
 
     List<Question> listBySearch(QuestionQueryDto questionQueryDto);
+
+    void deleteByQuestionId(Long id);
 }

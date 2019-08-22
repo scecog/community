@@ -14,6 +14,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -153,5 +154,17 @@ public class QuestionService {
             return questionDto;
         }).collect(Collectors.toList());
         return questionDtoList;
+    }
+
+
+    public void deleteById(Long id,User user) {
+        Question question = questionMapper.findById(id);
+        if (question == null){
+            throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+        }
+        if(question.getCreator() != user.getId()){
+            throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_YOU);
+        }
+        questionMapper.deleteByQuestionId(id);
     }
 }

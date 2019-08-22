@@ -20,7 +20,7 @@ public class TagCache {
         tagDto.setTags(Arrays.asList("javascript","php","css","html","html5","java","node.js","python","c++","c","golang","objective-c","typescript","shell","c#","swift","sass","bash",",ruby","less","asp.net","lua","scala","coffeescript","actionscript","rust","erlang","perl"));
         TagDto framework = new TagDto();
         framework.setCategoryName("平台框架");
-        framework.setTags(Arrays.asList("laravel",  "spring",  "express",  "django",  "flask",  "yii",  "ruby-on-rails", "tornado",  "koa  struts"));
+        framework.setTags(Arrays.asList("laravel",  "spring",  "express",  "django",  "flask",  "yii",  "ruby-on-rails", "tornado",  "koa",  "struts", "springboot", "vue"));
 
         TagDto server = new TagDto();
         server.setCategoryName("服务器");

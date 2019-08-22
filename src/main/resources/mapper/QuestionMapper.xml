@@ -124,4 +124,11 @@
         LIMIT
         #{pageNum},#{pageSize}
     </select>
+    <delete id="deleteByQuestionId" parameterType="java.lang.Long">
+        DELETE
+        FROM
+        question
+        WHERE
+        id=#{id}
+    </delete>
 </mapper>

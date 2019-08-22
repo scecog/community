@@ -1,5 +1,6 @@
 package com.sceon.community.controller;
 
+import com.sceon.community.dto.QuestionDto;
 import com.sceon.community.enums.NotifactionStatusEnum;
 import com.sceon.community.model.Notification;
 import com.sceon.community.model.User;
@@ -53,6 +54,13 @@ public class ProfileController {
 
         }
 
+        return "profile";
+    }
+    @GetMapping("/delete/{id}")
+    public String deleteQuestion(@PathVariable(name = "id") Long id,
+                                 HttpServletRequest request){
+        User user = (User)request.getSession().getAttribute("user");
+        questionService.deleteById(id,user);
         return "profile";
     }
 }

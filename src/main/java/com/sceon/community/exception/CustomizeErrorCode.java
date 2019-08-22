@@ -12,7 +12,8 @@ public enum CustomizeErrorCode implements ICustomizeErrorCode {
     SERVER_ERROR(2005,"服务器开小差，稍后再战" ),
     TYPE_PARAM_WRONG(2006,"评论类型错误或不存在" ),
     COMMENT_NOT_FOUND(2007,"回复的评论不存在" ),
-    COMMENT_NOT_EMPTY(2008,"回复不能为空");
+    COMMENT_NOT_EMPTY(2008,"回复不能为空"),
+    QUESTION_NOT_YOU(2009,"你要删除别人的问题，怕是有问题哦" );
 
 
     private String message;
